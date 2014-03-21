@@ -1,0 +1,130 @@
+%====================================================================
+% Beamer Template
+% 
+% author : ihciad
+%====================================================================
+\documentclass[11pt, dvipdfm]{beamer}
+%====================================================================
+% Using packages
+%====================================================================
+\usepackage{atbegshi}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{fancybox}
+\usepackage{bm}
+\usepackage{pgf,tikz}
+\usepackage{wrapfig}
+\usepackage{lmodern}
+%====================================================================
+% Setting of the avoiding corruption of text (Japanese only)
+%====================================================================
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+%====================================================================
+% Settings of a theme
+%====================================================================
+\usetheme{Boadilla}
+\usefonttheme{professionalfonts}
+\useinnertheme[shadow]{rounded}
+%====================================================================
+% Settings of the template
+%====================================================================
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{title page}[default][rounded=true]
+\setbeamertemplate{navigation symbols}{}
+%====================================================================
+% Definition of a itemize
+%====================================================================
+\setbeamertemplate{itemize item}[ball]
+\setbeamertemplate{itemize subitem}[default]
+\setbeamertemplate{itemize subsubitem}[circle]
+%====================================================================
+% Settings of a space between the lines
+%====================================================================
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{\itemsep}
+\addtolength{\wideitemsep}{5pt}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\itemsep}{\wideitemsep}\olditem}
+\makeatletter
+\def\@listii{\leftmargin\leftmarginii
+              \topsep    7pt
+              \parsep    0\p@   \@plus\p@
+              \itemsep   \parsep}
+\makeatother
+%====================================================================
+% Definition of colors
+%====================================================================
+\definecolor{mystructure}{RGB}{62,96,111}
+\definecolor{myexample}{RGB}{212,13,68}
+\definecolor{myalert}{RGB}{198,20,35}
+%====================================================================
+% Definition of colors
+%====================================================================
+\setbeamercolor{alert text}{fg=myalert}
+\setbeamercolor{structure}{fg=mystructure}
+\setbeamercolor{example text}{fg=myexample}
+\setbeamercolor{frametitle}{bg=structure}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{title}{bg=structure}
+\setbeamercolor{title}{fg=white}
+%====================================================================
+% Settings of fonts
+%====================================================================
+\setbeamerfont{title}{size=\Large}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\normalsize}
+%====================================================================
+% Settings of template
+%====================================================================
+
+\setbeamercovered{transparent}
+%====================================================================
+%
+%====================================================================
+\title[title]{Title}
+\author[author]{author}
+\institute[institute]{institute}
+\date[\today]{\today}
+%====================================================================
+%
+%====================================================================
+\begin{document}
+%====================================================================
+% Slide of a title
+%====================================================================
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+%====================================================================
+% Example of the slide
+%====================================================================
+\begin{frame}
+\frametitle{Title}
+This slide shows the example of slide template
+
+\begin{itemize}
+    \item hoge
+    \item fuga
+    \begin{itemize}
+        \item piyoo
+        \item \textcolor{red}{bar}
+    \end{itemize}
+\end{itemize}
+
+\begin{alertblock}{example of alert block}
+This is the example of the alert block
+\end{alertblock}
+
+\begin{block}{example of the block}
+\begin{itemize}
+    \item You can use itemize in the block
+    \item like this
+\end{itemize}
+\end{block}
+
+\end{frame}
+%====================================================================
+%
+%====================================================================
+\end{document}
